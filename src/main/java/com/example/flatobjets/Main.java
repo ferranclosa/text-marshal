@@ -21,6 +21,10 @@ public class Main implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
+        /**
+         * This first will use the original method, where each field will have the associated
+         * properties (length, position, padding, etc)
+         */
         Customerquery cq = new Customerquery();
         cq.setCodeSiren("12347");
         cq.setCustName("MARIN");
@@ -30,13 +34,16 @@ public class Main implements CommandLineRunner{
         cq.setProgramToCall("AV71");
         System.out.println(cq.toString());
 
+        /**
+         * This second will use the latest version of the solution, using
+         */
+
         Supplierquery sq = new Supplierquery();
         sq.setCodeSiren("77777");
         sq.setSupplierName("INB AND COLLEAGUES");
         sq.setCarmCustomer(false);
         sq.setLastOrderServed(LocalDate.now().minusDays(45));
         sq.setCustBalance(4L);
-        sq.setProgramToCall("HYD6");
         System.out.println(sq.marshal());
 
         String answer = "02RCI     098HUBBY        SHOES AND BITS                                                                                      0000067520010102";

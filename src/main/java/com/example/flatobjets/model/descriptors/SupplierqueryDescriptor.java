@@ -13,6 +13,25 @@ import java.time.LocalDate;
 
 import static com.example.flatobjets.model.enums.PadPosition.E;
 
+/**
+ * This is the decriptor for the message SupplierQuery? SupplierQuery is of the type 'ToText'
+ * meaning that from the object we will create the TEXT message, applying certain rules like
+ * length, padding, patterns, formatting etc.
+ *
+ * Note that each data type has helper classes (ToTextFrom***) that will have the
+ * detaills needed when marshaling/unmarshaling, like string lenght , position,  pattern etc
+ *
+ * After eac declaration, we create the instance with the definition, containing the required
+ * parameters that will define the variable. Note that there are quite a few contructors available. The fewer parameters
+ * used for initialisation, the more of the values are defaulted: For instance most Strings will be Left-aligned with
+ * padding  (defaulted to space) on the right of the String. These defaults are the most common use case, but
+ * they can be overriden.
+ *
+ * Similarly for most Numeric values, where a default is to have the number filled with 0 on the left of the NUmber. And so on.
+ *
+ * Once all fields have been defined, we need to ONLY create the Getters. Only the Getters. To get access to the methods a
+ * associated with the 'type'
+ */
 public abstract class SupplierqueryDescriptor  {
 
     /*the Header
@@ -26,20 +45,22 @@ public abstract class SupplierqueryDescriptor  {
     private static ToTextFromString codeSiren = new ToTextFromString(14 , Character.valueOf(' '), PadPosition.E);
     private static ToTextFromString supplierName = new ToTextFromString(29);
     private static ToTextFromNumber custBalance = new ToTextFromNumber(18);
-    private static ToTextFromDate lastOrderServerd = new ToTextFromDate(LocalDate.now(), DatePatterns.Y4MD);
+    private static ToTextFromDate lastOrderServed = new ToTextFromDate(LocalDate.now(), DatePatterns.Y4MD);
     private static ToTextFromBoolean carmCustomer = new ToTextFromBoolean(false, BooleanPatterns.YesNo);
 
     public SupplierqueryDescriptor() {
-        super();
-
-    }
+       }
 
     public  ToTextFromNumber getVersion() {
         return version;
     }
 
-    public  ToTextFromString getHeader() {
+    public ToTextFromString getHeader() {
         return header;
+    }
+
+    public ToTextFromDate getLastOrderServed() {
+        return lastOrderServed;
     }
 
     public ToTextFromString getProgramToCall() {
@@ -52,22 +73,6 @@ public abstract class SupplierqueryDescriptor  {
 
     public ToTextFromString getSupplierName() {
         return supplierName;
-    }
-
-    public ToTextFromDate getlastOrderServerd() {
-        return lastOrderServerd;
-    }
-
-    public void setlastOrderServerd(ToTextFromDate lastOrderServerd) {
-        this.lastOrderServerd = lastOrderServerd;
-    }
-
-    public void setCarmCustomer(ToTextFromBoolean carmCustomer) {
-        this.carmCustomer = carmCustomer;
-    }
-
-    public ToTextFromDate getLastOrderServerd() {
-        return lastOrderServerd;
     }
 
     public ToTextFromBoolean getCarmCustomer() {

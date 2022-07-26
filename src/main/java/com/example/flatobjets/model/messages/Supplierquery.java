@@ -21,6 +21,7 @@ public class Supplierquery extends SupplierqueryDescriptor {
         super();
         setVersion();
         setHeader();
+        setProgramToCall();
     }
 
     public void setCodeSiren(String codeSiren) {
@@ -38,9 +39,9 @@ public class Supplierquery extends SupplierqueryDescriptor {
         super.getHeader().setTheString(this.header);
     }
 
-    public void setProgramToCall(String programToCall) {
-        this.programToCall = programToCall;
-        super.getProgramToCall().setTheString(programToCall);
+    public void setProgramToCall() {
+        this.programToCall = "AVl7";
+        super.getProgramToCall().setTheString(this.programToCall);
     }
 
     public void setSupplierName(String supplierName) {
@@ -55,7 +56,7 @@ public class Supplierquery extends SupplierqueryDescriptor {
 
     public void setLastOrderServed(LocalDate lastOrderServed) {
         this.lastOrderServed = lastOrderServed;
-        super.getLastOrderServerd().setTheDate(lastOrderServed);
+        super.getLastOrderServed().setTheDate(lastOrderServed);
     }
 
     public void setCarmCustomer(Boolean carmCustomer) {
@@ -73,6 +74,6 @@ public class Supplierquery extends SupplierqueryDescriptor {
                 super.getSupplierName().toText() +
                 super.getCustBalance().toText() +
                 super.getCarmCustomer().toText() +
-                super.getlastOrderServerd().toText();
+                super.getLastOrderServed().toText();
     }
 }
