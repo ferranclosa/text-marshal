@@ -31,7 +31,7 @@ public class ToTextFromNumber {
     }
 
 
-    public String getTheText() {
+    public String toText() {
         switch (this.thePadPosition) {
             case E:
                 return Strings.padEnd(this.theNumber.toString(), this.theLength, this.thePad);

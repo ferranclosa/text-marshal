@@ -38,7 +38,7 @@ public class ToTextFromString {
     }
 
 
-    public String getTheString() {
+    public String toText() {
         switch (this.thePadPosition) {
             case E:
                 return Strings.padEnd(this.theString, this.theLength, this.thePad);

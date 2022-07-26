@@ -66,13 +66,13 @@ public class Supplierquery extends SupplierqueryDescriptor {
 
     public String marshal() {
         return
-                super.getVersion().getTheText() +
-                super.getHeader().getTheString() +
-                super.getProgramToCall().getTheString() +
-                super.getCodeSiren().getTheString() +
-                super.getSupplierName().getTheString() +
-                super.getCustBalance().getTheText() +
-                super.getCarmCustomer().getTheText() +
-                super.getlastOrderServerd().getTheFormattedDate();
+                super.getVersion().toText() +
+                super.getHeader().toText() +
+                super.getProgramToCall().toText() +
+                super.getCodeSiren().toText() +
+                super.getSupplierName().toText() +
+                super.getCustBalance().toText() +
+                super.getCarmCustomer().toText() +
+                super.getlastOrderServerd().toText();
     }
 }

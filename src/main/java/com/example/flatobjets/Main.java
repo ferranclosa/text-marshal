@@ -39,9 +39,7 @@ public class Main implements CommandLineRunner{
         sq.setProgramToCall("HYD6");
         System.out.println(sq.marshal());
 
-
         String answer = "02RCI     098HUBBY        SHOES AND BITS                                                                                      0000067520010102";
-
 
         System.out.println("Original reply = > " + answer);
 

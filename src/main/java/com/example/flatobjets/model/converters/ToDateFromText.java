@@ -24,7 +24,7 @@ public class ToDateFromText {
     }
 
 
-    public LocalDate getTheDate(String theText)  {
+    public LocalDate toLocalDate(String theText)  {
         Integer day =null;
                 Integer month = null;
         Integer year = null;

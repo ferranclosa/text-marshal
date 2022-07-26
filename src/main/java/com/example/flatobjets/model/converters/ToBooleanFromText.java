@@ -18,7 +18,7 @@ public class ToBooleanFromText {
     }
 
 
-    public Boolean getTheBoolean(String theText) {
+    public Boolean toBoolean(String theText) {
         Integer endIndex = this.getTheFrom() - 1 + Integer.valueOf(1);
         String result = theText.substring(this.getTheFrom() - 1, endIndex);
         if(result == "1" && this.theBooleanPattern.equals(BooleanPatterns.Binary) ||

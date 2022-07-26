@@ -1,9 +1,7 @@
 package com.example.flatobjets.model.messages;
 
 
-import com.example.flatobjets.model.converters.ToStringFromText;
 import com.example.flatobjets.model.descriptors.SupplierAnswerDesriptor;
-import com.example.flatobjets.model.enums.PadPosition;
 
 import java.time.LocalDate;
 
@@ -38,26 +36,26 @@ public class SupplierAnswer extends SupplierAnswerDesriptor {
 
 
     public void unmarshal(String theText) {
-        this.version = super.getVersion().getTheString(theText);
-        this.header = super.getHeader().getTheString(theText);
-        this.returnStatus = super.getReturnStatus().getTheString(theText);
-        this.productName = super.getWproductName().getTheString(theText);
-        this.operationCode = super.getWoperationCode().getTheString(theText);
-        this.productCost = Math.toIntExact(super.getWproductCost().getTheNumber(theText));
-        this.productAppearedOn = super.getProductAppearedOn().getTheDate(theText);
+        this.version = super.getVersion().toString(theText);
+        this.header = super.getHeader().toString(theText);
+        this.returnStatus = super.getReturnStatus().toString(theText);
+        this.productName = super.getWproductName().toString(theText);
+        this.operationCode = super.getWoperationCode().toString(theText);
+        this.productCost = Math.toIntExact(super.getWproductCost().toNumber(theText));
+        this.productAppearedOn = super.getProductAppearedOn().toLocalDate(theText);
     }
 
     @Override
     public String toString() {
         return  "SupplierAnswer{" +
 
-                "version=  '" + version +'\'' +
+                " version=  '" + version +'\'' +
                 ", header=  '" + header +'\'' +
                 ", returnCode= '" + returnStatus+'\'' +
-                ", operationCode='" + operationCode + '\'' +
-                ", productName='" + productName + '\'' +
-                ", productCost=" + productCost + '\'' +
-                ", appeareance Date=" + productAppearedOn +
+                ", operationCode= '" + operationCode + '\'' +
+                ", productName= '" + productName + '\'' +
+                ", productCost= '" + productCost + '\'' +
+                ", appeareance Date= '" + productAppearedOn + '\'' +
                 '}';
     }
 }

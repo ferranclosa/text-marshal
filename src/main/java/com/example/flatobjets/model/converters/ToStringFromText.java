@@ -26,7 +26,7 @@ public class ToStringFromText {
     }
 
 
-    public String getTheString(String theText) {
+    public String toString(String theText) {
         Integer endIndex = this.getTheFrom() - 1 + this.getTheLength();
         String result = theText.substring(this.getTheFrom() - 1, endIndex);
         switch (thePadPosition) {

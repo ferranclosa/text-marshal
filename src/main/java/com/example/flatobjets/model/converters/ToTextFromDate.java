@@ -17,7 +17,7 @@ public class ToTextFromDate {
 
 
 
-    public String getTheFormattedDate() {
+    public String toText() {
         String patt = null;
         switch (thePattern) {
             case Y4MD:

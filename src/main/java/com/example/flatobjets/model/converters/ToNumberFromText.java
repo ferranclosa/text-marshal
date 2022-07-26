@@ -25,7 +25,7 @@ public class ToNumberFromText {
     }
 
 
-    public Long getTheNumber(String theText) {
+    public Long toNumber(String theText) {
         Integer endIndex = this.getTheFrom() - 1 + this.getTheLength();
         String result = theText.substring(this.getTheFrom() - 1, endIndex);
         switch (thePadPosition) {

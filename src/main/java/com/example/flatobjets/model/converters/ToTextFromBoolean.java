@@ -15,7 +15,7 @@ public class ToTextFromBoolean {
 
 
 
-    public String getTheText() {
+    public String toText() {
         String truth = null;
         String lie = null;
         switch (this.thePattern) {
